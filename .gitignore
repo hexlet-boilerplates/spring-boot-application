@@ -42,3 +42,5 @@ out/
 node
 
 .env
+
+src/main/resources/static
