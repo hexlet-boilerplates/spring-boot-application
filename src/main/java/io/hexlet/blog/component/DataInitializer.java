@@ -1,12 +1,12 @@
-package io.hexlet.blog.components;
+package io.hexlet.blog.component;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import io.hexlet.blog.models.User;
-import io.hexlet.blog.services.CustomUserDetailsService;
+import io.hexlet.blog.model.User;
+import io.hexlet.blog.service.CustomUserDetailsService;
 import lombok.AllArgsConstructor;
 
 @Component
