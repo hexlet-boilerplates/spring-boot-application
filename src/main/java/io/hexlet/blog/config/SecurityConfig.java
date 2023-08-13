@@ -6,14 +6,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.servlet.util.matcher.MvcRequestMatcher;
 import org.springframework.web.servlet.handler.HandlerMappingIntrospector;
 
 import io.hexlet.blog.service.CustomUserDetailsService;
@@ -34,17 +31,17 @@ public class SecurityConfig {
             throws Exception {
         // TODO: remove after merge
         // https://github.com/spring-projects/spring-security/issues/13568#issuecomment-1645059215
-        MvcRequestMatcher.Builder mvcMatcherBuilder = new MvcRequestMatcher.Builder(introspector);
+        // MvcRequestMatcher.Builder mvcMatcherBuilder = new MvcRequestMatcher.Builder(introspector);
         return http
-                .csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(mvcMatcherBuilder.pattern("/login")).permitAll()
-                        .requestMatchers(mvcMatcherBuilder.pattern("/")).permitAll()
-                        .requestMatchers(mvcMatcherBuilder.pattern("/index.html")).permitAll()
-                        .requestMatchers(mvcMatcherBuilder.pattern("/static/**")).permitAll()
-                        .anyRequest().authenticated())
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .httpBasic(Customizer.withDefaults())
+                // .csrf(csrf -> csrf.disable())
+                // .authorizeHttpRequests(auth -> auth
+                //         .requestMatchers(mvcMatcherBuilder.pattern("/api/login")).permitAll()
+                //         .requestMatchers(mvcMatcherBuilder.pattern("/")).permitAll()
+                //         .requestMatchers(mvcMatcherBuilder.pattern("/index.html")).permitAll()
+                //         .requestMatchers(mvcMatcherBuilder.pattern("/static/**")).permitAll()
+                //         .anyRequest().authenticated())
+                // .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                // .httpBasic(Customizer.withDefaults())
                 .build();
     }
 

@@ -28,6 +28,7 @@ dependencies {
   implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0")
   implementation("org.modelmapper:modelmapper:3.1.1")
   implementation("net.datafaker:datafaker:2.0.1")
+  implementation("org.zalando:logbook-spring-boot-starter:3.3.0")
   // implementation("io.sentry:sentry-spring-boot-starter-jakarta:6.28.0")
   runtimeOnly("com.h2database:h2")
   testImplementation("org.springframework.boot:spring-boot-starter-test")

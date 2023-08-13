@@ -2,6 +2,8 @@
 logging:
   level:
     org:
+      zalando:
+        logbook: TRACE
       springframework:
         security: DEBUG
 
@@ -17,6 +19,11 @@ sentry:
   dsn: https://examplePublicKey@o0.ingest.sentry.io/0
   tracesSampleRate: 1.0
 
-# server:
-#   servlet:
-#     context-path: /api
+logbook:
+  strategy: status-at-least
+  minimum-status: 200
+  format:
+    style: http
+
+server:
+  address: 0.0.0.0
