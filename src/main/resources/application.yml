@@ -1,10 +1,12 @@
 ---
 logging:
   level:
+    root: WARN
     org:
       zalando:
         logbook: TRACE
       springframework:
+        # web: DEBUG
         security: DEBUG
 
 spring:
@@ -21,7 +23,7 @@ sentry:
 
 logbook:
   strategy: status-at-least
-  minimum-status: 200
+  minimum-status: 400
   format:
     style: http
 
