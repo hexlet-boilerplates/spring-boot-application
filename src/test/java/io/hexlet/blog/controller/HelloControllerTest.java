@@ -1,4 +1,4 @@
-package io.hexlet.blog.controllers;
+package io.hexlet.blog.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class HelloControllerTest {
 
     @Test
     public void testIndex() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/"))
+        mockMvc.perform(MockMvcRequestBuilders.get("/about"))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
 }
