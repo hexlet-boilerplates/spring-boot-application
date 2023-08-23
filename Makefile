@@ -1,6 +1,6 @@
 setup:
-	gradle wrapper --gradle-version 8.2.1
-	gradle build
+	./gradlew wrapper --gradle-version 8.3
+	./gradlew build
 
 app:
 	./gradlew bootRun --args='--spring.profiles.active=dev'
