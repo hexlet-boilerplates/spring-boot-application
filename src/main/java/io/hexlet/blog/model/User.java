@@ -43,7 +43,7 @@ public class User implements UserDetails {
     // EMAIL
     @Column(unique = true)
     @ToString.Include
-    private String username;
+    private String email;
 
     // @NotBlank
     @ToString.Include
@@ -62,14 +62,14 @@ public class User implements UserDetails {
     @CreatedDate
     private Date createdAt;
 
-    @Override
-    public String getPassword() {
-        return password;
-    }
+    // @Override
+    // public String getPassword() {
+    //     return password;
+    // }
 
     @Override
     public String getUsername() {
-        return username;
+        return email;
     }
 
     @Override

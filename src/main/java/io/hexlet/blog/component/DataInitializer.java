@@ -19,7 +19,7 @@ public class DataInitializer implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         var email = "hexlet@example.com";
         var userData = new User();
-        userData.setUsername(email);
+        userData.setEmail(email);
         userData.setPassword("qwerty");
         userService.createUser(userData);
     }
