@@ -3,7 +3,7 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
     application
-    id("io.freefair.lombok") version "8.2.2"
+    id("io.freefair.lombok") version "8.3"
     id("org.springframework.boot") version "3.1.3"
     id("io.spring.dependency-management") version "1.1.3"
     id("com.github.ben-manes.versions") version "0.47.0"
@@ -29,9 +29,13 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0")
     // implementation("io.sentry:sentry-spring-boot-starter-jakarta:6.28.0")
+
+    implementation("org.openapitools:jackson-databind-nullable:0.2.6")
+    implementation("org.mapstruct:mapstruct:1.5.5.Final")
+    annotationProcessor("org.mapstruct:mapstruct-processor:1.5.5.Final")
+
     runtimeOnly("com.h2database:h2:2.2.220")
     implementation("org.apache.commons:commons-lang3:3.13.0")
-    implementation("org.modelmapper:modelmapper:3.1.1")
     implementation("net.datafaker:datafaker:2.0.1")
     implementation("org.instancio:instancio-junit:3.2.0")
     implementation("net.javacrumbs.json-unit:json-unit-assertj:3.0.0")
