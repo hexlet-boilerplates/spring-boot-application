@@ -31,5 +31,3 @@ public abstract class UserMapper {
     @InheritConfiguration
     public abstract void update(UserDTO update, @MappingTarget User destination);
 }
-
-
