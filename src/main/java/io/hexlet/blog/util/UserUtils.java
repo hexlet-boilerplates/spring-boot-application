@@ -6,10 +6,8 @@ import org.springframework.stereotype.Component;
 
 import io.hexlet.blog.model.User;
 import io.hexlet.blog.repository.UserRepository;
-import lombok.AllArgsConstructor;
 
 @Component
-@AllArgsConstructor
 public class UserUtils {
     @Autowired
     private UserRepository userRepository;

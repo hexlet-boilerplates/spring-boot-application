@@ -25,7 +25,7 @@ public class DataInitializer implements ApplicationRunner {
         var email = "hexlet@example.com";
         var userData = new User();
         userData.setEmail(email);
-        userData.setPassword("qwerty");
+        userData.setPasswordDigest("qwerty");
         userRepository.save(userData);
 
         var user2 = Instancio.of(modelGenerator.getUserModel()).create();

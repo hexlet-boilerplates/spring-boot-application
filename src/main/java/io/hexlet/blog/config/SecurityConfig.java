@@ -29,20 +29,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http, HandlerMappingIntrospector introspector)
             throws Exception {
-        // TODO: remove after merge
-        // https://github.com/spring-projects/spring-security/issues/13568#issuecomment-1645059215
-        // MvcRequestMatcher.Builder mvcMatcherBuilder = new MvcRequestMatcher.Builder(introspector);
-        return http
-                // .csrf(csrf -> csrf.disable())
-                // .authorizeHttpRequests(auth -> auth
-                //         .requestMatchers(mvcMatcherBuilder.pattern("/api/login")).permitAll()
-                //         .requestMatchers(mvcMatcherBuilder.pattern("/")).permitAll()
-                //         .requestMatchers(mvcMatcherBuilder.pattern("/index.html")).permitAll()
-                //         .requestMatchers(mvcMatcherBuilder.pattern("/static/**")).permitAll()
-                //         .anyRequest().authenticated())
-                // .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                // .httpBasic(Customizer.withDefaults())
-                .build();
+        return http.build();
     }
 
     @Bean
@@ -56,7 +43,6 @@ public class SecurityConfig {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setUserDetailsService(userService);
         provider.setPasswordEncoder(passwordEncoder);
-        // auth.authenticationProvider(provider);
         return provider;
     }
 }

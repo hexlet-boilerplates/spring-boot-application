@@ -3,10 +3,10 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
     application
-    id("io.freefair.lombok") version "8.3"
+    id("io.freefair.lombok") version "8.4"
     id("org.springframework.boot") version "3.1.4"
     id("io.spring.dependency-management") version "1.1.3"
-    id("com.github.ben-manes.versions") version "0.48.0"
+    id("com.github.ben-manes.versions") version "0.49.0"
 }
 
 group = "io.hexlet.blog"
@@ -36,8 +36,8 @@ dependencies {
 
     runtimeOnly("com.h2database:h2:2.2.224")
     implementation("org.apache.commons:commons-lang3:3.13.0")
-    implementation("net.datafaker:datafaker:2.0.1")
-    implementation("org.instancio:instancio-junit:3.3.0")
+    implementation("net.datafaker:datafaker:2.0.2")
+    implementation("org.instancio:instancio-junit:3.3.1")
     implementation("net.javacrumbs.json-unit:json-unit-assertj:3.2.2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
