@@ -4,9 +4,9 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 plugins {
     application
     id("io.freefair.lombok") version "8.4"
-    id("org.springframework.boot") version "3.1.4"
-    id("io.spring.dependency-management") version "1.1.3"
-    id("com.github.ben-manes.versions") version "0.49.0"
+    id("org.springframework.boot") version "3.2.0"
+    id("io.spring.dependency-management") version "1.1.4"
+    id("com.github.ben-manes.versions") version "0.50.0"
 }
 
 group = "io.hexlet.blog"
@@ -31,17 +31,17 @@ dependencies {
     // implementation("io.sentry:sentry-spring-boot-starter-jakarta:6.28.0")
 
     implementation("org.openapitools:jackson-databind-nullable:0.2.6")
-    implementation("org.mapstruct:mapstruct:1.5.5.Final")
-    annotationProcessor("org.mapstruct:mapstruct-processor:1.5.5.Final")
+    implementation("org.mapstruct:mapstruct:1.6.0.Beta1")
+    annotationProcessor("org.mapstruct:mapstruct-processor:1.6.0.Beta1")
 
     runtimeOnly("com.h2database:h2:2.2.224")
-    implementation("org.apache.commons:commons-lang3:3.13.0")
+    implementation("org.apache.commons:commons-lang3:3.14.0")
     implementation("net.datafaker:datafaker:2.0.2")
-    implementation("org.instancio:instancio-junit:3.3.1")
+    implementation("org.instancio:instancio-junit:3.6.0")
     implementation("net.javacrumbs.json-unit:json-unit-assertj:3.2.2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+    testImplementation(platform("org.junit:junit-bom:5.10.1"))
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.1")
 }
 
 tasks.test {
