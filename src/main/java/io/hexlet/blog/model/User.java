@@ -30,71 +30,71 @@ import lombok.ToString;
 @Table(name = "users")
 public class User implements UserDetails, BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = IDENTITY)
-    @ToString.Include
-    @EqualsAndHashCode.Include
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = IDENTITY)
+  @ToString.Include
+  @EqualsAndHashCode.Include
+  private Long id;
 
-    // EMAIL
-    @Column(unique = true)
-    @ToString.Include
-    private String email;
+  // EMAIL
+  @Column(unique = true)
+  @ToString.Include
+  private String email;
 
-    // @NotBlank
-    @ToString.Include
-    private String firstName;
+  // @NotBlank
+  @ToString.Include
+  private String firstName;
 
-    // @NotBlank
-    @ToString.Include
-    private String lastName;
+  // @NotBlank
+  @ToString.Include
+  private String lastName;
 
-    @NotBlank
-    private String passwordDigest;
+  @NotBlank
+  private String passwordDigest;
 
-    @LastModifiedDate
-    private Date updatedAt;
+  @LastModifiedDate
+  private Date updatedAt;
 
-    @CreatedDate
-    private Date createdAt;
+  @CreatedDate
+  private Date createdAt;
 
-    // @Override
-    // public String getPassword() {
-    //     return password;
-    // }
+  // @Override
+  // public String getPassword() {
+  // return password;
+  // }
 
-    @Override
-    public String getUsername() {
-        return email;
-    }
+  @Override
+  public String getUsername() {
+    return email;
+  }
 
-    @Override
-    public String getPassword() {
-        return passwordDigest;
-    }
+  @Override
+  public String getPassword() {
+    return passwordDigest;
+  }
 
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
+  @Override
+  public boolean isEnabled() {
+    return true;
+  }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return new ArrayList<GrantedAuthority>();
-    }
+  @Override
+  public Collection<? extends GrantedAuthority> getAuthorities() {
+    return new ArrayList<GrantedAuthority>();
+  }
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
+  @Override
+  public boolean isAccountNonExpired() {
+    return true;
+  }
 
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
+  @Override
+  public boolean isAccountNonLocked() {
+    return true;
+  }
 
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
+  @Override
+  public boolean isCredentialsNonExpired() {
+    return true;
+  }
 }
