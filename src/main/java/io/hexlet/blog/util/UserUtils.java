@@ -1,11 +1,10 @@
 package io.hexlet.blog.util;
 
+import io.hexlet.blog.model.User;
+import io.hexlet.blog.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
-
-import io.hexlet.blog.model.User;
-import io.hexlet.blog.repository.UserRepository;
 
 @Component
 public class UserUtils {
@@ -21,4 +20,3 @@ public class UserUtils {
         return userRepository.findByEmail(email).get();
     }
 }
-

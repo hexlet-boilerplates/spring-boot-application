@@ -1,5 +1,7 @@
 package io.hexlet.blog.config;
 
+import io.hexlet.blog.service.CustomUserDetailsService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,9 +15,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.servlet.handler.HandlerMappingIntrospector;
 
-import io.hexlet.blog.service.CustomUserDetailsService;
-import lombok.AllArgsConstructor;
-
 @Configuration
 @EnableWebSecurity
 @AllArgsConstructor
@@ -27,15 +26,8 @@ public class SecurityConfig {
     private CustomUserDetailsService userService;
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http, HandlerMappingIntrospector introspector)
-            throws Exception {
-        return http.build();
-    }
-
-    @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
-        return http.getSharedObject(AuthenticationManagerBuilder.class)
-                .build();
+        return http.getSharedObject(AuthenticationManagerBuilder.class).build();
     }
 
     @Bean
@@ -44,5 +36,11 @@ public class SecurityConfig {
         provider.setUserDetailsService(userService);
         provider.setPasswordEncoder(passwordEncoder);
         return provider;
+    }
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http, HandlerMappingIntrospector introspector)
+            throws Exception {
+        return http.build();
     }
 }

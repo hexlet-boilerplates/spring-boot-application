@@ -45,6 +45,17 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.1")
 }
 
+spotless {
+    java {
+        importOrder()
+        removeUnusedImports()
+        eclipse()
+            .sortMembersEnabled(true)
+        formatAnnotations()
+        indentWithSpaces(4)
+    }
+}
+
 tasks.test {
     useJUnitPlatform()
     testLogging {

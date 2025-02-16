@@ -17,7 +17,6 @@ public class HelloControllerTest {
 
     @Test
     public void testIndex() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/about"))
-                .andExpect(MockMvcResultMatchers.status().isOk());
+        mockMvc.perform(MockMvcRequestBuilders.get("/about")).andExpect(MockMvcResultMatchers.status().isOk());
     }
 }
