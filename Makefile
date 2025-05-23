@@ -1,5 +1,5 @@
 setup:
-	./gradlew wrapper --gradle-version 8.12.1
+	./gradlew wrapper --gradle-version 8.14.1
 	./gradlew build
 
 app:
@@ -22,7 +22,7 @@ install:
 test:
 	./gradlew test
 
-check-java-deps:
-	./gradlew dependencyUpdates -Drevision=release
+update-deps:
+	./gradlew refreshVersions
 
 .PHONY: build
