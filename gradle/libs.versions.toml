@@ -6,38 +6,52 @@ spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot-vers
 spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "spring-dependency-version" }
 lombok = { id = "io.freefair.lombok", version.ref = "lombok-plugin" }
 versions = { id = "com.github.ben-manes.versions", version.ref = "versions-plugin" }
-shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadow-plugin" }
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow-plugin" }
 sonarqube = { id = "org.sonarqube", version.ref = "sonarqube-plugin" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless-plugin" }
 
+# com-diffplug-spotless = { id = "com.diffplug.spotless", version = "7.2.1" }
+#
+# io-freefair-lombok = { id = "io.freefair.lombok", version = "9.0.0-rc2" }
+#
+# com-github-ben-manes-versions = { id = "com.github.ben-manes.versions", version = "0.52.0" }
+#
+# org-springframework-boot = { id = "org.springframework.boot", version = "3.5.5" }
+#
+# io-spring-dependency-management = { id = "io.spring.dependency-management", version = "1.1.7" }
+#
+# com-gradleup-shadow = { id = "com.gradleup.shadow", version = "9.1.0" }
+#
+# org-sonarqube = { id = "org.sonarqube", version = "6.2.0.5505" }
+
 [versions]
 
-spring-boot-version = "3.5.0"
-spring-dependency-version = "1.1.7"
-lombok-plugin = "8.13.1"
-versions-plugin = "0.52.0"
-shadow-plugin = "8.1.1"
-sonarqube-plugin = "6.2.0.5505"
-spotless-plugin = "7.0.3"
+spring-boot-version = "3.5.5"
 
-commons-lang3 = "3.17.0"
+spring-dependency-version = "1.1.7"
+lombok-plugin = "9.0.0-rc2"
+versions-plugin = "0.52.0"
+shadow-plugin = "9.1.0"
+sonarqube-plugin = "6.2.0.5505"
+spotless-plugin = "7.2.1"
+
+commons-lang3 = "3.18.0"
 commons-collections4 = "4.5.0"
-junit-bom = "5.12.2"
-##     ⬆ = "5.13.0-M1"
-##     ⬆ = "5.13.0-M2"
-##     ⬆ = "5.13.0-M3"
-##     ⬆ = "5.13.0-RC1"
-jackson-databind-nullable = "0.2.6"
-springdoc-openapi-ui = "2.8.8"
+junit-bom = "5.13.4"
+
+jackson-databind-nullable = "0.2.7"
+springdoc-openapi-ui = "2.8.13"
+
 datafaker = "2.4.3"
-instancio-junit = "5.4.1"
+instancio-junit = "5.5.1"
 jsonunit-assertj = "4.1.1"
 mapstruct = "1.6.3"
 h2 = "2.3.232"
 
+junit = "5.13.4"
+
 [libraries]
 
-# Spring Boot
 springBootStarterWeb = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "spring-boot-version" }
 springBootStarterDataJpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "spring-boot-version" }
 springBootStarterValidation = { module = "org.springframework.boot:spring-boot-starter-validation", version.ref = "spring-boot-version" }
@@ -47,27 +61,21 @@ springBootStarterTest = { module = "org.springframework.boot:spring-boot-starter
 springBootDevtools = { module = "org.springframework.boot:spring-boot-devtools", version.ref = "spring-boot-version" }
 springBootConfigProcessor = { module = "org.springframework.boot:spring-boot-configuration-processor", version.ref = "spring-boot-version" }
 
-# OpenAPI
 springdocOpenapiUi = { module = "org.springdoc:springdoc-openapi-starter-webmvc-ui", version.ref = "springdoc-openapi-ui" }
 
-# Jackson
 jacksonDatabindNullable = { module = "org.openapitools:jackson-databind-nullable", version.ref = "jackson-databind-nullable" }
 
-# Utility libraries
 commonsLang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang3" }
 commonsCollections4 = { module = "org.apache.commons:commons-collections4", version.ref = "commons-collections4" }
-datafaker = { module = "net.datafaker:datafaker", version.ref = "datafaker" }
+datafaker = "net.datafaker:datafaker:2.4.4"
 instancioJunit = { module = "org.instancio:instancio-junit", version.ref = "instancio-junit" }
 jsonunitAssertj = { module = "net.javacrumbs.json-unit:json-unit-assertj", version.ref = "jsonunit-assertj" }
 
-# MapStruct
-mapstruct = { module = "org.mapstruct:mapstruct", version.ref = "mapstruct" }
+mapstruct = "org.mapstruct:mapstruct:1.6.3"
 mapstructProcessor = { module = "org.mapstruct:mapstruct-processor", version.ref = "mapstruct" }
 
-# DB
-h2 = { module = "com.h2database:h2", version.ref = "h2" }
+h2 = "com.h2database:h2:2.3.232"
 
-# JUnit
 junitBom = { module = "org.junit:junit-bom", version.ref = "junit-bom" }
 junitJupiter = { module = "org.junit.jupiter:junit-jupiter" }
 junitPlatformLauncher = { module = "org.junit.platform:junit-platform-launcher" }

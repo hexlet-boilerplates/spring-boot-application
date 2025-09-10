@@ -1,17 +1,18 @@
-import org.gradle.api.tasks.testing.logging.TestExceptionFormat
-import org.gradle.api.tasks.testing.logging.TestLogEvent
+// import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+// import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
-    application
-    jacoco
-    checkstyle
-    alias(libs.plugins.lombok)
-    alias(libs.plugins.versions)
     alias(libs.plugins.spotless)
+
+    application
+    // jacoco
+    alias(libs.plugins.lombok)
+    // alias(libs.plugins.versions)
+    // alias(libs.plugins.spotless)
     alias(libs.plugins.spring.boot)
     alias(libs.plugins.spring.dependency.management)
     alias(libs.plugins.shadow)
-    alias(libs.plugins.sonarqube)
+    // alias(libs.plugins.sonarqube)
 }
 
 group = "io.hexlet.blog"
@@ -20,6 +21,12 @@ version = "1.0-SNAPSHOT"
 application {
     mainClass.set("io.hexlet.blog.Application")
 }
+
+// java {
+//     toolchain {
+//         languageVersion.set(JavaLanguageVersion.of(21))
+//     }
+// }
 
 repositories {
     mavenCentral()
@@ -59,25 +66,32 @@ dependencies {
     testRuntimeOnly(libs.junitPlatformLauncher)
 }
 
-tasks.test {
-    useJUnitPlatform()
-    testLogging {
-        exceptionFormat = TestExceptionFormat.FULL
-        events =
-            setOf(
-                TestLogEvent.FAILED,
-                TestLogEvent.PASSED,
-                TestLogEvent.SKIPPED,
-            )
-        showStandardStreams = true
-    }
+// Show deprecation warnings to pinpoint source
+tasks.withType<JavaCompile>().configureEach {
+    options.compilerArgs.add("-Xlint:deprecation")
 }
 
-tasks.jacocoTestReport {
-    reports {
-        xml.required.set(true)
-    }
+tasks.test {
+    useJUnitPlatform()
+    // Silence CDS warning emitted by the JVM during tests
+    jvmArgs("-Xshare:off")
+    // Uncomment to enable detailed logging
+    // testLogging {
+    //     exceptionFormat = TestExceptionFormat.FULL
+    //     events = setOf(
+    //         TestLogEvent.FAILED,
+    //         TestLogEvent.PASSED,
+    //         TestLogEvent.SKIPPED,
+    //     )
+    //     showStandardStreams = true
+    // }
 }
+
+// tasks.jacocoTestReport {
+//     reports {
+//         xml.required.set(true)
+//     }
+// }
 
 spotless {
     java {
@@ -85,14 +99,14 @@ spotless {
         removeUnusedImports()
         eclipse().sortMembersEnabled(true)
         formatAnnotations()
-        indentWithSpaces(4)
+        leadingTabsToSpaces(4)
     }
 }
 
-sonar {
-    properties {
-        property("sonar.projectKey", "hexlet-boilerplates_java-package")
-        property("sonar.organization", "hexlet-boilerplates")
-        property("sonar.host.url", "https://sonarcloud.io")
-    }
-}
+// sonar {
+//     properties {
+//         property("sonar.projectKey", "hexlet-boilerplates_java-package")
+//         property("sonar.organization", "hexlet-boilerplates")
+//         property("sonar.host.url", "https://sonarcloud.io")
+//     }
+// }

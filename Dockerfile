@@ -6,9 +6,9 @@
 # COPY frontend /frontend
 # RUN npm run build
 
-FROM eclipse-temurin:20-jdk
+FROM eclipse-temurin:24-jdk
 
-ARG GRADLE_VERSION=8.3
+ARG GRADLE_VERSION=9.0.0
 
 RUN apt-get update && apt-get install -yq make unzip
 

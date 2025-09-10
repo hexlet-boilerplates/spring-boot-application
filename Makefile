@@ -1,5 +1,5 @@
 setup:
-	./gradlew wrapper --gradle-version 8.14.1
+	./gradlew wrapper --gradle-version 9.0.0
 	./gradlew build
 
 app:
@@ -21,6 +21,9 @@ install:
 
 test:
 	./gradlew test
+
+lint:
+	./gradlew spotlessApply
 
 update-deps:
 	./gradlew refreshVersions
