@@ -12,7 +12,10 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        // Customize as needed; minimal chain without deprecated APIs
+        http.authorizeHttpRequests(
+                auth -> auth.requestMatchers("/", "/about", "/error", "/favicon.ico", "/css/**", "/js/**", "/images/**")
+                        .permitAll().anyRequest().authenticated())
+                .csrf(csrf -> csrf.disable());
         return http.build();
     }
 }

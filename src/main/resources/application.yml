@@ -2,6 +2,7 @@
 logging:
   level:
     root: WARN
+    org.springframework.boot: INFO
     org:
       zalando:
         logbook: TRACE
@@ -16,6 +17,9 @@ spring:
   output:
     ansi:
       enabled: always
+  config:
+    activate:
+      on-profile: dev
 
 sentry:
   dsn: https://examplePublicKey@o0.ingest.sentry.io/0
