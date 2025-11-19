@@ -1,0 +1,38 @@
+version: 2
+updates:
+  - package-ecosystem: gradle
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 10
+    groups:
+      spring-boot:
+        patterns:
+          - "org.springframework.boot:*"
+          - "io.spring.dependency-management:*"
+      build-plugins:
+        patterns:
+          - "com.diffplug.spotless:*"
+          - "io.freefair.lombok:*"
+          - "com.github.ben-manes.versions:*"
+          - "com.gradleup.shadow:*"
+          - "org.sonarqube:*"
+      testing:
+        patterns:
+          - "org.junit:*"
+          - "org.instancio:*"
+          - "net.javacrumbs.json-unit:*"
+      data-and-mappers:
+        patterns:
+          - "org.springdoc:*"
+          - "org.openapitools:*"
+          - "org.apache.commons:*"
+          - "net.datafaker:*"
+          - "org.mapstruct:*"
+          - "com.h2database:*"
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
