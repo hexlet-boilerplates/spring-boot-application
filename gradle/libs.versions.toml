@@ -33,7 +33,7 @@ lombok-plugin = "9.0.0-rc2"
 versions-plugin = "0.52.0"
 shadow-plugin = "9.2.2"
 sonarqube-plugin = "7.1.0.6387"
-spotless-plugin = "7.2.1"
+spotless-plugin = "8.1.0"
 
 commons-lang3 = "3.18.0"
 commons-collections4 = "4.5.0"
