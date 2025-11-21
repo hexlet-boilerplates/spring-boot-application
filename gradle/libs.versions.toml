@@ -32,7 +32,7 @@ spring-dependency-version = "1.1.7"
 lombok-plugin = "9.0.0-rc2"
 versions-plugin = "0.52.0"
 shadow-plugin = "9.2.2"
-sonarqube-plugin = "6.2.0.5505"
+sonarqube-plugin = "7.1.0.6387"
 spotless-plugin = "7.2.1"
 
 commons-lang3 = "3.18.0"
