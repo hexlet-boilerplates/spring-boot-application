@@ -1,5 +1,5 @@
 setup:
-	./gradlew wrapper --gradle-version 9.0.0
+	./gradlew wrapper --gradle-version 9.2.1
 	./gradlew build
 
 app:
@@ -25,7 +25,4 @@ test:
 lint:
 	./gradlew spotlessApply
 
-update-deps:
-	./gradlew refreshVersions
-
-.PHONY: build
+.PHONY: setup app clean build dev reload-classes install test lint

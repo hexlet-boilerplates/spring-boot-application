@@ -1,3 +1,6 @@
+import org.gradle.api.tasks.testing.Test
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+import org.gradle.api.tasks.testing.logging.TestLogEvent
 // import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 // import org.gradle.api.tasks.testing.logging.TestLogEvent
 
@@ -22,11 +25,11 @@ application {
     mainClass.set("io.hexlet.blog.Application")
 }
 
-// java {
-//     toolchain {
-//         languageVersion.set(JavaLanguageVersion.of(21))
-//     }
-// }
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
 
 repositories {
     mavenCentral()
@@ -34,7 +37,7 @@ repositories {
 
 dependencies {
     // Spring Boot
-    implementation(libs.springBootStarterWeb)
+    implementation(libs.springBootStarterWebmvc)
     implementation(libs.springBootStarterDataJpa)
     implementation(libs.springBootStarterValidation)
     implementation(libs.springBootStarterActuator)
@@ -61,37 +64,49 @@ dependencies {
 
     // Tests
     testImplementation(libs.springBootStarterTest)
+    testImplementation(libs.springBootStarterWebmvcTest)
     testImplementation(platform(libs.junitBom))
     testImplementation(libs.junitJupiter)
     testRuntimeOnly(libs.junitPlatformLauncher)
 }
 
 // Show deprecation warnings to pinpoint source
-tasks.withType<JavaCompile>().configureEach {
-    options.compilerArgs.add("-Xlint:deprecation")
-}
+// tasks.withType<JavaCompile>().configureEach {
+//     options.compilerArgs.add("-Xlint:deprecation")
+// }
 
 tasks.test {
-    useJUnitPlatform()
-    // Silence CDS warning emitted by the JVM during tests
-    jvmArgs("-Xshare:off")
-    // Uncomment to enable detailed logging
-    // testLogging {
-    //     exceptionFormat = TestExceptionFormat.FULL
-    //     events = setOf(
-    //         TestLogEvent.FAILED,
-    //         TestLogEvent.PASSED,
-    //         TestLogEvent.SKIPPED,
-    //     )
-    //     showStandardStreams = true
-    // }
+    testLogging {
+        showStandardStreams = true
+
+        // какие события показывать
+        events(
+            TestLogEvent.FAILED,
+            TestLogEvent.PASSED,
+            TestLogEvent.SKIPPED,
+            TestLogEvent.STANDARD_OUT,
+            TestLogEvent.STANDARD_ERROR,
+        )
+
+        // формат исключений
+        exceptionFormat = TestExceptionFormat.FULL
+
+        // детали
+        showExceptions = true
+        showCauses = true
+        showStackTraces = true
+    }
 }
 
-// tasks.jacocoTestReport {
-//     reports {
-//         xml.required.set(true)
-//     }
-// }
+testing {
+    suites {
+        // Configure the built-in test suite
+        val test by getting(JvmTestSuite::class) {
+            // Use JUnit Jupiter test framework
+            useJUnitJupiter()
+        }
+    }
+}
 
 spotless {
     java {

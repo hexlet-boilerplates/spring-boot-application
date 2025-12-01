@@ -26,25 +26,24 @@ spotless = { id = "com.diffplug.spotless", version.ref = "spotless-plugin" }
 
 [versions]
 
-spring-boot-version = "3.5.5"
-
+spring-boot-version = "4.0.0"
 spring-dependency-version = "1.1.7"
-lombok-plugin = "9.0.0-rc2"
+lombok-plugin = "9.1.0"
 versions-plugin = "0.52.0"
 shadow-plugin = "9.2.2"
 sonarqube-plugin = "7.1.0.6387"
-spotless-plugin = "7.2.1"
+spotless-plugin = "8.1.0"
 
-commons-lang3 = "3.18.0"
+commons-lang3 = "3.20.0"
 commons-collections4 = "4.5.0"
-junit-bom = "5.13.4"
+junit-bom = "6.0.1"
 
-jackson-databind-nullable = "0.2.7"
-springdoc-openapi-ui = "2.8.13"
+jackson-databind-nullable = "0.2.8"
+springdoc-openapi-ui = "3.0.0"
 
 datafaker = "2.4.3"
 instancio-junit = "5.5.1"
-jsonunit-assertj = "4.1.1"
+jsonunit-assertj = "5.1.0"
 mapstruct = "1.6.3"
 h2 = "2.3.232"
 
@@ -52,12 +51,13 @@ junit = "5.13.4"
 
 [libraries]
 
-springBootStarterWeb = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "spring-boot-version" }
+springBootStarterWebmvc = { module = "org.springframework.boot:spring-boot-starter-webmvc", version.ref = "spring-boot-version" }
 springBootStarterDataJpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa", version.ref = "spring-boot-version" }
 springBootStarterValidation = { module = "org.springframework.boot:spring-boot-starter-validation", version.ref = "spring-boot-version" }
 springBootStarterActuator = { module = "org.springframework.boot:spring-boot-starter-actuator", version.ref = "spring-boot-version" }
 springBootStarterSecurity = { module = "org.springframework.boot:spring-boot-starter-security", version.ref = "spring-boot-version" }
 springBootStarterTest = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "spring-boot-version" }
+springBootStarterWebmvcTest = { module = "org.springframework.boot:spring-boot-starter-webmvc-test", version.ref = "spring-boot-version" }
 springBootDevtools = { module = "org.springframework.boot:spring-boot-devtools", version.ref = "spring-boot-version" }
 springBootConfigProcessor = { module = "org.springframework.boot:spring-boot-configuration-processor", version.ref = "spring-boot-version" }
 
@@ -67,14 +67,14 @@ jacksonDatabindNullable = { module = "org.openapitools:jackson-databind-nullable
 
 commonsLang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang3" }
 commonsCollections4 = { module = "org.apache.commons:commons-collections4", version.ref = "commons-collections4" }
-datafaker = "net.datafaker:datafaker:2.4.4"
+datafaker = "net.datafaker:datafaker:2.5.3"
 instancioJunit = { module = "org.instancio:instancio-junit", version.ref = "instancio-junit" }
 jsonunitAssertj = { module = "net.javacrumbs.json-unit:json-unit-assertj", version.ref = "jsonunit-assertj" }
 
 mapstruct = "org.mapstruct:mapstruct:1.6.3"
 mapstructProcessor = { module = "org.mapstruct:mapstruct-processor", version.ref = "mapstruct" }
 
-h2 = "com.h2database:h2:2.3.232"
+h2 = "com.h2database:h2:2.4.240"
 
 junitBom = { module = "org.junit:junit-bom", version.ref = "junit-bom" }
 junitJupiter = { module = "org.junit.jupiter:junit-jupiter" }
