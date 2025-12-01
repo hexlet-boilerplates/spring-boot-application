@@ -37,14 +37,14 @@ spotless-plugin = "7.2.1"
 
 commons-lang3 = "3.18.0"
 commons-collections4 = "4.5.0"
-junit-bom = "5.13.4"
+junit-bom = "6.0.1"
 
 jackson-databind-nullable = "0.2.7"
 springdoc-openapi-ui = "2.8.13"
 
 datafaker = "2.4.3"
 instancio-junit = "5.5.1"
-jsonunit-assertj = "4.1.1"
+jsonunit-assertj = "5.1.0"
 mapstruct = "1.6.3"
 h2 = "2.3.232"
 
