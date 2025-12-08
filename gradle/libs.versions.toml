@@ -30,7 +30,7 @@ spring-boot-version = "4.0.0"
 spring-dependency-version = "1.1.7"
 lombok-plugin = "9.1.0"
 versions-plugin = "0.53.0"
-shadow-plugin = "9.2.2"
+shadow-plugin = "9.3.0"
 sonarqube-plugin = "7.2.0.6526"
 spotless-plugin = "8.1.0"
 
