@@ -38,7 +38,7 @@ commons-lang3 = "3.20.0"
 commons-collections4 = "4.5.0"
 junit-bom = "6.0.3"
 
-jackson-databind-nullable = "0.2.8"
+jackson-databind-nullable = "0.2.9"
 springdoc-openapi-ui = "3.0.1"
 
 datafaker = "2.4.3"
