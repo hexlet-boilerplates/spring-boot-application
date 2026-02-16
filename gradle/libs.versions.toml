@@ -36,7 +36,7 @@ spotless-plugin = "8.2.1"
 
 commons-lang3 = "3.20.0"
 commons-collections4 = "4.5.0"
-junit-bom = "6.0.2"
+junit-bom = "6.0.3"
 
 jackson-databind-nullable = "0.2.8"
 springdoc-openapi-ui = "3.0.1"
@@ -67,7 +67,7 @@ jacksonDatabindNullable = { module = "org.openapitools:jackson-databind-nullable
 
 commonsLang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang3" }
 commonsCollections4 = { module = "org.apache.commons:commons-collections4", version.ref = "commons-collections4" }
-datafaker = "net.datafaker:datafaker:2.5.3"
+datafaker = "net.datafaker:datafaker:2.5.4"
 instancioJunit = { module = "org.instancio:instancio-junit", version.ref = "instancio-junit" }
 jsonunitAssertj = { module = "net.javacrumbs.json-unit:json-unit-assertj", version.ref = "jsonunit-assertj" }
 
