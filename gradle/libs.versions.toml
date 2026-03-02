@@ -26,11 +26,11 @@ spotless = { id = "com.diffplug.spotless", version.ref = "spotless-plugin" }
 
 [versions]
 
-spring-boot-version = "4.0.2"
+spring-boot-version = "4.0.3"
 spring-dependency-version = "1.1.7"
 lombok-plugin = "9.2.0"
 versions-plugin = "0.53.0"
-shadow-plugin = "9.3.1"
+shadow-plugin = "9.3.2"
 sonarqube-plugin = "7.2.2.6593"
 spotless-plugin = "8.2.1"
 
@@ -39,7 +39,7 @@ commons-collections4 = "4.5.0"
 junit-bom = "6.0.3"
 
 jackson-databind-nullable = "0.2.9"
-springdoc-openapi-ui = "3.0.1"
+springdoc-openapi-ui = "3.0.2"
 
 datafaker = "2.4.3"
 instancio-junit = "5.5.1"
