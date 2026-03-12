@@ -43,7 +43,7 @@ springdoc-openapi-ui = "3.0.2"
 
 datafaker = "2.4.3"
 instancio-junit = "5.5.1"
-jsonunit-assertj = "5.1.0"
+jsonunit-assertj = "5.1.1"
 mapstruct = "1.6.3"
 h2 = "2.3.232"
 
