@@ -39,7 +39,7 @@ commons-collections4 = "4.5.0"
 junit-bom = "6.0.3"
 
 jackson-databind-nullable = "0.2.10"
-springdoc-openapi-ui = "3.0.2"
+springdoc-openapi-ui = "3.0.3"
 
 datafaker = "2.4.3"
 instancio-junit = "5.5.1"
