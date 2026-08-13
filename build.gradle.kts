@@ -15,7 +15,6 @@ plugins {
     alias(libs.plugins.spring.boot)
     alias(libs.plugins.spring.dependency.management)
     alias(libs.plugins.shadow)
-    // alias(libs.plugins.sonarqube)
 }
 
 group = "io.hexlet.blog"
@@ -118,10 +117,3 @@ spotless {
     }
 }
 
-// sonar {
-//     properties {
-//         property("sonar.projectKey", "hexlet-boilerplates_java-package")
-//         property("sonar.organization", "hexlet-boilerplates")
-//         property("sonar.host.url", "https://sonarcloud.io")
-//     }
-// }
