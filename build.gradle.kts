@@ -10,8 +10,7 @@ plugins {
     application
     // jacoco
     alias(libs.plugins.lombok)
-    // alias(libs.plugins.versions)
-    // alias(libs.plugins.spotless)
+    alias(libs.plugins.versions)
     alias(libs.plugins.spring.boot)
     alias(libs.plugins.spring.dependency.management)
     alias(libs.plugins.shadow)
