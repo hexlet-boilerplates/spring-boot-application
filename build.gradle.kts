@@ -33,6 +33,11 @@ repositories {
     mavenCentral()
 }
 
+// Spring Boot приносит свою версию junit-bom и перебивает нашу платформу.
+// Переопределяем управляемое свойство значением из каталога, иначе артефакты
+// junit-platform разъезжаются с junit-jupiter.
+ext["junit-jupiter.version"] = libs.versions.junit.bom.get()
+
 dependencies {
     // Spring Boot
     implementation(libs.springBootStarterWebmvc)
@@ -100,8 +105,9 @@ testing {
     suites {
         // Configure the built-in test suite
         val test by getting(JvmTestSuite::class) {
-            // Use JUnit Jupiter test framework
-            useJUnitJupiter()
+            // Версия берётся из каталога, иначе подставится дефолт Gradle
+            // и агрегат junit-jupiter уедет ниже остальных артефактов junit
+            useJUnitJupiter(libs.versions.junit.bom)
         }
     }
 }
