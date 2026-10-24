@@ -18,6 +18,7 @@ reload-classes:
 
 install:
 	./gradlew installDist
+	mise exec -- hk install --mise
 
 test:
 	./gradlew test
