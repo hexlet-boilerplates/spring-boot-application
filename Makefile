@@ -23,6 +23,9 @@ test:
 	./gradlew test
 
 lint:
+	./gradlew spotlessCheck compileJava compileTestJava
+
+lint-fix:
 	./gradlew spotlessApply
 
-.PHONY: setup app clean build dev reload-classes install test lint
+.PHONY: setup app clean build dev reload-classes install test lint lint-fix

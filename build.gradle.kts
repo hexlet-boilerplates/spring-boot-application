@@ -6,6 +6,7 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
     alias(libs.plugins.spotless)
+    alias(libs.plugins.errorprone)
 
     application
     // jacoco
@@ -39,6 +40,8 @@ repositories {
 ext["junit-jupiter.version"] = libs.versions.junit.bom.get()
 
 dependencies {
+    errorprone(libs.errorproneCore)
+
     // Spring Boot
     implementation(libs.springBootStarterWebmvc)
     implementation(libs.springBootStarterDataJpa)

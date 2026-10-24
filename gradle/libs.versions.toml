@@ -6,6 +6,7 @@ lombok = { id = "io.freefair.lombok", version.ref = "lombok-plugin" }
 versions = { id = "io.github.ben-manes.versions", version.ref = "versions-plugin" }
 shadow = { id = "com.gradleup.shadow", version.ref = "shadow-plugin" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless-plugin" }
+errorprone = { id = "net.ltgt.errorprone", version.ref = "errorprone-plugin" }
 
 [versions]
 
@@ -15,6 +16,7 @@ lombok-plugin = "9.8.2"
 versions-plugin = "0.66.0"
 shadow-plugin = "9.6.1"
 spotless-plugin = "8.10.4"
+errorprone-plugin = "5.1.1"
 
 commons-lang3 = "3.21.0"
 commons-collections4 = "4.6.0"
@@ -28,6 +30,7 @@ instancio-junit = "6.1.0"
 jsonunit-assertj = "6.4.0"
 mapstruct = "1.7.0.Beta2"
 h2 = "2.5.252"
+errorprone = "2.51.0"
 
 [libraries]
 
@@ -59,3 +62,5 @@ h2 = { module = "com.h2database:h2", version.ref = "h2" }
 junitBom = { module = "org.junit:junit-bom", version.ref = "junit-bom" }
 junitJupiter = { module = "org.junit.jupiter:junit-jupiter" }
 junitPlatformLauncher = { module = "org.junit.platform:junit-platform-launcher" }
+
+errorproneCore = { module = "com.google.errorprone:error_prone_core", version.ref = "errorprone" }
