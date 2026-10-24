@@ -25,6 +25,9 @@ test:
 
 lint:
 	./gradlew spotlessCheck compileJava compileTestJava
+	rumdl check .
+	typos
+	jactionlint
 
 lint-fix:
 	./gradlew spotlessApply
